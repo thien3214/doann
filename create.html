@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Đăng kí</title>
+<link rel="stylesheet" href="create.css" />
+<script>
+function kiemtra(){
+    var e = document.frmlogin.e.value;
+    var p = document.frmlogin.p.value;
+    var d = document.frmlogin.p.value;
+    var sdt = document.frmlogin.p.value;
+    
+    if (e=="") {
+        document.getElementById("baoloi1").innerHTML="Vui lòng kiểm tra Email";
+        return false;
+    }
+	
+    if (p=="") { 
+        document.getElementById("baoloi2").innerHTML="Pass phải từ 10 ký tự";
+        return false;
+    }
+
+    if (d==""){
+        document.getElementById("baoloi3").innerHTML="Vui lòng nhập địa chỉ";
+        return false;
+    }
+
+    if (sdt=="") { 
+        document.getElementById("baoloi4").innerHTML="Vui lòng điền số điện thoại";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <h2>Đăng ký </h2>
+    <form name="frmlogin" onsubmit="return kiemtra()">
+        <h4>Địa chỉ</h4><input class="text" type="diachi" name="d" id="dc">
+        <p style="color:#F00" id="baoloi3"></p>
+        <h4>Số điện thoại</h4><input class="text" type="number" name="sdt" id="sdt">
+        <p style="color:#F00" id="baoloi4"></p>
+        <h4>Email</h4> <input class="text" type="Email" name="e" id="em">
+        <p style="color:#F00" id="baoloi1"></p>
+        <h4>Mật Khẩu</h4> <input class="text" type="matkhau" name="p" id="pw" >
+        <p style="color:#F00" id="baoloi2"></p><br />
+        <button class="button" type="submit" >Đăng Ký</button>
+    </form>
+</div>
+</body>
+</html>
